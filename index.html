@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <h1 id="heading">Player Ratings</h1>
+  <h1 id="heading">Input Player Ratings Details</h1>
   <form id="new-form-here">
     <div id="form_wrapper">
 
@@ -27,6 +27,7 @@
       </div>
 
       <div class="form-item">
+        <label for="rating" class="primary">Rating</label>
         <select id="rating">
           <option disabled selected></option>;
           <option value="0 - Were they even playing?">0 - Were they even playing?</option>;
@@ -41,9 +42,13 @@
       <button type="submit" id="submit_name">Submit Player's Rating</button>
 
     </form>
+    <div>
+      <button id="delete-all">Delete All Players and Ratings</button>
 
-    <h1>Player List</h1>
-  <ul id="player-list"></ul>
+    </div>
+
+    <h1>Player Ratings</h1>
+    <ul id="player-list"></ul>
 
   </body>
   </html>

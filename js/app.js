@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   const newItemform = document.querySelector('#new-form-here');
   newItemform.addEventListener('submit', handleNewItemFormSubmit);
+
+  const deleteAllButton = document.querySelector('#delete-all');
+  deleteAllButton.addEventListener('click', handleDeleteAllClick);
 })
 
 const handleNewItemFormSubmit = function (event) {
@@ -19,25 +22,24 @@ const createPlayerListItem = function (form) {
   playerFirstName.textContent = form.first_name.value;
   playerListItem.appendChild(playerFirstName);
 
-  const playerLastName = document.createElement('h3');
+  const playerLastName = document.createElement('h2');
   playerLastName.textContent = form.last_name.value;
   playerListItem.appendChild(playerLastName);
 
-  const playerTeam = document.createElement('h4');
+  const playerTeam = document.createElement('h2');
   playerTeam.textContent = form.team_name.value;
   playerListItem.appendChild(playerTeam);
 
-  const playerRating = document.createElement('p');
+  const playerRating = document.createElement('h1');
   playerRating.textContent = form.rating.value;
   playerListItem.appendChild(playerRating);
 
-  // const author = document.createElement('h3');
-  // author.textContent = form.author.value;
-  // readingListItem.appendChild(author);
-  //
-  // const category = document.createElement('p');
-  // category.textContent = form.category.value;
-  // readingListItem.appendChild(category);
+  console.dir(event);
 
   return playerListItem;
+}
+
+const handleDeleteAllClick = function(event) {
+  const playerList = document.querySelector('#player-list');
+  playerList.innerHTML = '';
 }
