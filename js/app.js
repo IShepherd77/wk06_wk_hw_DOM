@@ -7,34 +7,47 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 const handleNewItemFormSubmit = function (event) {
+
   event.preventDefault();
   const playerList = document.querySelector('#player-list');
   const playerListItem = createPlayerListItem(event.target);
   playerList.appendChild(playerListItem);
   event.target.reset();
+
 }
 
-const createPlayerListItem = function (form) {
-  const playerListItem = document.createElement('li');
-  playerListItem.classList.add('player-list-item');
-
-  const playerFirstName = document.createElement('h2');
+const createFirstName = function (form) {
+  const playerFirstName = document.createElement('p');
   playerFirstName.textContent = form.first_name.value;
-  playerListItem.appendChild(playerFirstName);
+  playerFirstName.classList.add('name')
+  return playerFirstName;
+}
 
-  const playerLastName = document.createElement('h2');
+
+const createPlayerListItem = function (form) {
+  const playerListItem = document.createElement('div');
+  playerListItem.classList.add('player');
+
+  // const playerFirstName = document.createElement('p');
+  // playerFirstName.textContent = form.first_name.value;
+  // playerFirstName.classList.add('name') //add class name which has bold in css
+  // playerListItem.appendChild(playerFirstName);
+  playerListItem.appendChild(createFirstName(form));
+
+  const playerLastName = document.createElement('p');
   playerLastName.textContent = form.last_name.value;
+  playerLastName.classList.add('name')
   playerListItem.appendChild(playerLastName);
 
-  const playerTeam = document.createElement('h2');
+  const playerTeam = document.createElement('p');
   playerTeam.textContent = form.team_name.value;
   playerListItem.appendChild(playerTeam);
 
-  const playerRating = document.createElement('h1');
+  const playerRating = document.createElement('p');
   playerRating.textContent = form.rating.value;
   playerListItem.appendChild(playerRating);
 
-  console.dir(event);
+  console.dir(form);
 
   return playerListItem;
 }

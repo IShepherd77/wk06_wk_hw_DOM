@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Player Rating App</title>
-  <script src="js/app.js"></script>
+  <script src="js/app.js"></script> <!-- goes to app.js rest of HTML page not loaded at this point-->
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -27,7 +27,7 @@
       </div>
 
       <div class="form-item">
-        <label for="rating" class="primary">Rating</label>
+        <label for="rating" class="primary">Rating:</label>
         <select id="rating">
           <option disabled selected></option>;
           <option value="0 - Were they even playing?">0 - Were they even playing?</option>;
@@ -48,7 +48,10 @@
     </div>
 
     <h1>Player Ratings</h1>
-    <ul id="player-list"></ul>
+
+    <!-- <ul id="player-list"></ul> -->
+    <div id="player-list" class=""/></div>
 
   </body>
   </html>
+  <!--
