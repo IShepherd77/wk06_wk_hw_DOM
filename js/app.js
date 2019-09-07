@@ -23,6 +23,16 @@ const createFirstName = function (form) {
   return playerFirstName;
 }
 
+const createCheckbox = function(labelNameHere) {
+  const checkboxDiv = document.createElement('div');
+  const label = document.createElement('label');
+  label.innerHTML = labelNameHere;
+  checkboxDiv.appendChild(label);
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkboxDiv.appendChild(checkbox);
+  return checkboxDiv;
+}
 
 const createPlayerListItem = function (form) {
   const playerListItem = document.createElement('div');
@@ -36,7 +46,7 @@ const createPlayerListItem = function (form) {
 
   const playerLastName = document.createElement('p');
   playerLastName.textContent = form.last_name.value;
-  playerLastName.classList.add('name')
+  playerLastName.classList.add('name');
   playerListItem.appendChild(playerLastName);
 
   const playerTeam = document.createElement('p');
@@ -46,6 +56,8 @@ const createPlayerListItem = function (form) {
   const playerRating = document.createElement('p');
   playerRating.textContent = form.rating.value;
   playerListItem.appendChild(playerRating);
+
+    playerListItem.appendChild(createCheckbox('yellow1'));
 
   console.dir(form);
 
