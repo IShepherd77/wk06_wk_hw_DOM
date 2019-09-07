@@ -23,16 +23,19 @@ const createFirstName = function (form) {
   return playerFirstName;
 }
 
-const createCheckbox = function(labelNameHere) {
+const createCheckbox = function(labelName) {
   const checkboxDiv = document.createElement('div');
+  checkboxDiv.classList.add('checkbox-align');
   const label = document.createElement('label');
-  label.innerHTML = labelNameHere;
+  label.innerHTML = labelName;
   checkboxDiv.appendChild(label);
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
   checkboxDiv.appendChild(checkbox);
   return checkboxDiv;
 }
+
+
 
 const createPlayerListItem = function (form) {
   const playerListItem = document.createElement('div');
@@ -57,7 +60,9 @@ const createPlayerListItem = function (form) {
   playerRating.textContent = form.rating.value;
   playerListItem.appendChild(playerRating);
 
-    playerListItem.appendChild(createCheckbox('yellow1'));
+  playerListItem.appendChild(createCheckbox('Yellow 1'));
+  playerListItem.appendChild(createCheckbox('Yellow 2'));
+  playerListItem.appendChild(createCheckbox('Red'));
 
   console.dir(form);
 
