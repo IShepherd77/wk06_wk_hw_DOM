@@ -12,7 +12,6 @@ const handleNewItemFormSubmit = function (event) {
   const playerListItem = createPlayerListItem(event.target);
   playerList.appendChild(playerListItem);
   event.target.reset();
-
 }
 
 const createFirstName = function (form) {
@@ -43,7 +42,6 @@ createPlayerRating = function(form) {
   return playerRating;
 }
 
-
 const createCheckbox = function(labelName) {
   const checkboxDiv = document.createElement('div');
   checkboxDiv.classList.add('checkbox-align');
@@ -55,8 +53,6 @@ const createCheckbox = function(labelName) {
   checkboxDiv.appendChild(checkbox);
   return checkboxDiv;
 }
-
-
 
 const createPlayerListItem = function (form) {
   const playerListItem = document.createElement('div');
@@ -83,16 +79,17 @@ const createPlayerListItem = function (form) {
   // const playerRating = document.createElement('p');
   // playerRating.textContent = form.rating.value;
   // playerListItem.appendChild(playerRating);
-  playerListItem.appendChild(createPlayerRating(form));
-
 
   playerListItem.appendChild(createCheckbox('Yellow 1'));
   playerListItem.appendChild(createCheckbox('Yellow 2'));
   playerListItem.appendChild(createCheckbox('Red'));
 
+  playerListItem.appendChild(createPlayerRating(form));
+
   console.dir(form);
 
   return playerListItem;
+
 }
 
 const handleDeleteAllClick = function(event) {

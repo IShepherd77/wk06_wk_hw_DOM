@@ -34,7 +34,8 @@ p {
   font-size: 20px;
   text-shadow: 1px 1px 1px pink;
   background-color: black;
-  padding: 10px;
+  /* padding: 10px; */
+  padding-right: 5px;
 }
 
 .player {
@@ -50,6 +51,13 @@ p {
   font-weight: bold;
   text-shadow: 1px 1px 1px red;
   padding: 5px;
+}
+
+.rating {
+  font-weight: bold;
+  text-shadow: 1px 1px 1px red;
+  padding: 5px;
+  color: orange;
 }
 
 .checkbox-align {
@@ -71,10 +79,34 @@ p {
   background-color: yellow;
   border-radius: 15px;
   font-weight: bold;
+  float: left;
+  margin-left: 5px:
 }
 
 #submit_name {
   background-color: yellow;
   border-radius: 15px;
   font-weight: bold;
+  float: left;
+  margin-right: 10px;
+}
+
+input#first_name {
+  background-color: f4f4f4;
+  justify-content: flex-end;
+}
+
+input#last_name {
+  background-color: f4f4f4;
+  justify-content: flex-end;
+}
+
+input#team_name {
+  background-color: f4f4f4;
+  justify-content: flex-end;
+}
+
+input#rating {
+  background-color: f4f4f4;
+  justify-content: flex-end;
 }
