@@ -14,7 +14,7 @@ const handleNewItemFormSubmit = function (event) {
   event.target.reset();
 
 }
-//refactor last name copying this
+
 const createFirstName = function (form) {
   const playerFirstName = document.createElement('p');
   playerFirstName.textContent = form.first_name.value;
@@ -34,6 +34,13 @@ createTeamName = function(form) {
   teamName.textContent = form.team_name.value;
   teamName.classList.add('team');
   return teamName;
+}
+
+createPlayerRating = function(form) {
+  const playerRating = document.createElement('p');
+  playerRating.textContent = form.rating.value;
+  playerRating.classList.add('rating');
+  return playerRating;
 }
 
 
@@ -73,9 +80,11 @@ const createPlayerListItem = function (form) {
   playerListItem.appendChild(createTeamName(form));
 
 
-  const playerRating = document.createElement('p');
-  playerRating.textContent = form.rating.value;
-  playerListItem.appendChild(playerRating);
+  // const playerRating = document.createElement('p');
+  // playerRating.textContent = form.rating.value;
+  // playerListItem.appendChild(playerRating);
+  playerListItem.appendChild(createPlayerRating(form));
+
 
   playerListItem.appendChild(createCheckbox('Yellow 1'));
   playerListItem.appendChild(createCheckbox('Yellow 2'));
