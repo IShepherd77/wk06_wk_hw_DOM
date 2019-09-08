@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 const handleNewItemFormSubmit = function (event) {
-
   event.preventDefault();
   const playerList = document.querySelector('#player-list');
   const playerListItem = createPlayerListItem(event.target);
@@ -15,13 +14,28 @@ const handleNewItemFormSubmit = function (event) {
   event.target.reset();
 
 }
-
+//refactor last name copying this
 const createFirstName = function (form) {
   const playerFirstName = document.createElement('p');
   playerFirstName.textContent = form.first_name.value;
   playerFirstName.classList.add('name')
   return playerFirstName;
 }
+
+const createLastName = function (form) {
+  const playerLastName = document.createElement('p');
+  playerLastName.textContent = form.last_name.value;
+  playerLastName.classList.add('name');
+  return playerLastName;
+}
+
+createTeamName = function(form) {
+  const teamName = document.createElement('p')
+  teamName.textContent = form.team_name.value;
+  teamName.classList.add('team');
+  return teamName;
+}
+
 
 const createCheckbox = function(labelName) {
   const checkboxDiv = document.createElement('div');
@@ -47,14 +61,17 @@ const createPlayerListItem = function (form) {
   // playerListItem.appendChild(playerFirstName);
   playerListItem.appendChild(createFirstName(form));
 
-  const playerLastName = document.createElement('p');
-  playerLastName.textContent = form.last_name.value;
-  playerLastName.classList.add('name');
-  playerListItem.appendChild(playerLastName);
+  // const playerLastName = document.createElement('p');
+  // playerLastName.textContent = form.last_name.value;
+  // playerLastName.classList.add('name');
+  // playerListItem.appendChild(playerLastName);
+  playerListItem.appendChild(createLastName(form));
 
-  const playerTeam = document.createElement('p');
-  playerTeam.textContent = form.team_name.value;
-  playerListItem.appendChild(playerTeam);
+  // const playerTeam = document.createElement('p');
+  // playerTeam.textContent = form.team_name.value;
+  // playerListItem.appendChild(playerTeam);
+  playerListItem.appendChild(createTeamName(form));
+
 
   const playerRating = document.createElement('p');
   playerRating.textContent = form.rating.value;

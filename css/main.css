@@ -1,5 +1,27 @@
 body {
-  background-color: pink;
+  /* background-color: pink; */
+  background-image: url(../images/football.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+}
+
+div {
+  color: white;
+  font-size: 20px;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+p {
+  color: white;
+  font-size: 30px;
+  text-shadow: 1px 1px 1px pink;
+  background-color: black;
+  padding-top: 5px;
 }
 
 .player {
@@ -16,6 +38,11 @@ body {
 }
 
 .checkbox-align {
+  background-color: black;
   display: inline;
-  padding-left: 5px;
+  padding: 10px;
+}
+
+.team {
+  font-style: italic;
 }
